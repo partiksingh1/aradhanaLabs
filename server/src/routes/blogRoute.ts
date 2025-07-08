@@ -1,7 +1,7 @@
 import express from "express"
 import { AddBlog, EditBlog, getAllBlogs, getBlogById } from "../controllers/blogController";
 import { verifyToken } from "../middleware/verifyToken";
-import { addComment, toggleLike } from "../controllers/activityController";
+import { addComment, generateAiContent, toggleLike } from "../controllers/activityController";
 
 export const blogRouter = express.Router();
 
@@ -11,3 +11,4 @@ blogRouter.get("/blogs", getAllBlogs)
 blogRouter.get("/blog/:id", getBlogById)
 blogRouter.post("/blog/:id/comment", verifyToken, addComment)
 blogRouter.post("/blog/:id/like", verifyToken, toggleLike)
+blogRouter.post("/blog/ai", verifyToken, generateAiContent)
