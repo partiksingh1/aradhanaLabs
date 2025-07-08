@@ -2,4 +2,4 @@
 /dist
 /.env
 /tsconfig.tsbuildinfo
-/generated/prisma
+/src/generated
